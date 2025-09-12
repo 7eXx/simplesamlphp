@@ -1,0 +1,11 @@
+services:
+  php81:
+    build: .
+    container_name: php81-simplesaml
+    network_mode: host
+    volumes:
+      - .:/app
+    working_dir: /app
+    tty: true
+    environment:
+      SIMPLESAMLSERVER_CONFIG_DIR: /app/config
