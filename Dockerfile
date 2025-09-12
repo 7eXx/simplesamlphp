@@ -1,4 +1,4 @@
-FROM php:8.1-cli
+FROM php:8.2-cli
 
 # Installa dipendenze di sistema
 RUN apt-get update && apt-get install -y \
@@ -30,4 +30,4 @@ RUN echo "xdebug.mode=debug" > /usr/local/etc/php/conf.d/xdebug.ini \
 
 WORKDIR /app
 
-ENTRYPOINT ["php", "-S", "0.0.0.0:8000", "-t", "public/"]
+CMD ["bash"]

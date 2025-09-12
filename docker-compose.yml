@@ -1,7 +1,7 @@
 services:
-  php81:
+  php82:
     build: .
-    container_name: php81-simplesaml
+    container_name: php82-simplesaml
     network_mode: host
     volumes:
       - .:/app
