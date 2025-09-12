@@ -110,6 +110,43 @@ $config = [
     ],
     */
 
+    'google-oidc' => [
+        'authoauth2:OAuth2',
+        // *** Google Endpoints ***
+        'urlAuthorize' => 'https://accounts.google.com/o/oauth2/auth',
+        'urlAccessToken' => 'https://accounts.google.com/o/oauth2/token',
+        'urlResourceOwnerDetails' => 'https://www.googleapis.com/oauth2/v3/userinfo',
+        // *** My application ***
+        'clientId' => 'secret',
+        'clientSecret' => 'secret',
+        'scopes' =>  array(
+            'openid',
+            'email',
+            'profile'
+        ),
+        'scopeSeparator' => ' ',
+        'urlAuthorizeOptions' => [
+            'approval_prompt' => 'force',
+            // The underlying OAuth2 library also supports overriding requested scopes
+            //'scope' => ['other']
+        ],
+    ],
+
+    /* **** USING OIDC GOOGLE TEMPLATE **** /
+    'google-oidc' => [
+        'authoauth2:OAuth2',
+        'template' => 'GoogleOIDC',
+        'clientId' => 'secret,
+        'clientSecret' => 'secret',
+        'urlAuthorizeOptions' => [
+            'approval_prompt' => 'force',
+
+            // The underlying OAuth2 library also supports overriding requested scopes
+            //'scope' => ['other']
+        ],
+    ],
+    */
+
     /*
     'crypto-hash' => [
         'authcrypt:Hash',
