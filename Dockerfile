@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
 RUN docker-php-ext-install \
     curl \
     pdo_sqlite \
+    pdo_mysql \
     mbstring \
     xml
 RUN pecl install xdebug \
